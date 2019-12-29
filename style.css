@@ -29,13 +29,11 @@ nav {
   padding-right: 10px;
 }
 
- /* Add a black background color to the top navigation */
  .top-nav {
   background-color: var(--main-color);
   overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
 .top-nav a {
   float: left;
   display: block;
@@ -46,19 +44,16 @@ nav {
   font-size: 17px;
 }
 
-/* Change the color of links on hover */
 .top-nav a:hover {
   background-color: var(--tertiary-color);
   color: var(--secondary-color);
 }
 
-/* Add an active class to highlight the current page */
 .top-nav a.active {
   background-color: var(--quaternary-color);
   color: var(--tertiary-color);
 }
 
-/* Hide the link that should open and close the top-nav on small screens */
 .top-nav .icon {
   display: none;
 } 
@@ -115,7 +110,6 @@ nav {
   color: var(--secondary-color)
 }
 
- /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the top-nav (.icon) */
  @media screen and (max-width: 600px) {
   .top-nav a {display: none;}
   .top-nav a.icon {
@@ -124,7 +118,6 @@ nav {
   }
 }
 
-/* The "responsive" class is added to the top-nav with JavaScript when the user clicks on the icon. This class makes the top-nav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
   .top-nav.responsive {position: relative;}
   .top-nav.responsive a.icon {
@@ -147,19 +140,47 @@ nav {
 .bg-img {
   background-image: url('http://lessthanseventy.com/hero-image.jpg');
   height: 100vh;
-  /* Center and scale the image nicely */
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-  /* Needed to position the navbar */
   position: relative;
 }
 
-/* Position the navbar container inside the image */
-.container {
+.chevron {
+  bottom: 0;
+  color: white;
+  margin: auto;
   position: absolute;
-  margin: 20px;
+  text-align: center;
+  width: 100%;
+
+}
+.container {
+  height: 90vh;
+  margin: 20px 0px 0px 0px;
+  position: absolute;
   width: 95%;
+}
+
+.hero-text {
+  color: white;
+  font-size: 5em;
+  margin: 75px auto;
+  position: relative;
+  text-align: center;
+  width: 80%;
+  word-wrap: break-word;
+}
+
+.hero-text .title {
+  font-size: 1.3em;
+  line-height: .8em;
+  color: var(--secondary-color);
+}
+
+.hero-text .subtitle {
+  margin: 40px 0px;
+  font-size: 1em;
+  line-height: .9em;
 }

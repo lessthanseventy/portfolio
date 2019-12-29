@@ -165,7 +165,6 @@ nav {
 
 .hero-text {
   color: white;
-  font-size: 5em;
   margin: 75px auto;
   position: relative;
   text-align: center;
@@ -174,13 +173,23 @@ nav {
 }
 
 .hero-text .title {
-  font-size: 1.3em;
+  font-size: 3.5em;
   line-height: .8em;
   color: var(--secondary-color);
 }
 
 .hero-text .subtitle {
   margin: 40px 0px;
-  font-size: 1em;
+  font-size: 2.5em;
   line-height: .9em;
+}
+
+/* About Section */
+
+#about {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  font-size: 1.5em;
+  height: 500px;
+  padding: 5% 15% 0 15%;
 }

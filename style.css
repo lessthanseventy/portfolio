@@ -30,13 +30,13 @@ nav {
 }
 
  /* Add a black background color to the top navigation */
- .topNav {
+ .top-nav {
   background-color: var(--main-color);
   overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
-.topNav a {
+.top-nav a {
   float: left;
   display: block;
   color: var(--secondary-color);
@@ -47,19 +47,19 @@ nav {
 }
 
 /* Change the color of links on hover */
-.topNav a:hover {
+.top-nav a:hover {
   background-color: var(--tertiary-color);
   color: var(--secondary-color);
 }
 
 /* Add an active class to highlight the current page */
-.topNav a.active {
+.top-nav a.active {
   background-color: var(--quaternary-color);
   color: var(--tertiary-color);
 }
 
-/* Hide the link that should open and close the topNav on small screens */
-.topNav .icon {
+/* Hide the link that should open and close the top-nav on small screens */
+.top-nav .icon {
   display: none;
 } 
 
@@ -69,13 +69,14 @@ nav {
 
 .eye-foreground {
   position: absolute;
-  color: red;
+  color: white;
   top: 8px;
+  z-index: 9999;
 }
 
 .eye-background {
   position: absolute;
-  color: red;
+  color: var(--secondary-color);
   left: 45px;
   top: 0px;
   opacity: 70%;
@@ -83,14 +84,15 @@ nav {
 
 .logo-text-foreground {
   position: absolute;
-  color: red;
+  color: white;
   left: 85px;
   top: 15px;
+  z-index: 9999;
 }
 
 .logo-text-background {
   position: absolute;
-  color: red;
+  color: var(--secondary-color);
   left: 105px;
   top: 6px;
   opacity: 70%;
@@ -102,35 +104,38 @@ nav {
   align-items: center;
 }
 
-.topNav a {
+.top-nav a {
   display: inline-block;
   padding: 10px 15px;
   text-decoration: none;
   color: var(--secondary-color);
 }
 
-.topNav:hover a {
+.top-nav:hover a {
   color: var(--secondary-color)
 }
 
- /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topNav (.icon) */
+ /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the top-nav (.icon) */
  @media screen and (max-width: 600px) {
-  .topNav a:not(:first-child) {display: none;}
-  .topNav a.icon {
+  .top-nav a {display: none;}
+  .top-nav a.icon {
     float: right;
     display: block;
   }
 }
 
-/* The "responsive" class is added to the topNav with JavaScript when the user clicks on the icon. This class makes the topNav look good on small screens (display the links vertically instead of horizontally) */
+/* The "responsive" class is added to the top-nav with JavaScript when the user clicks on the icon. This class makes the top-nav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
-  .topNav.responsive {position: relative;}
-  .topNav.responsive a.icon {
+  .top-nav.responsive {position: relative;}
+  .top-nav.responsive a.icon {
     position: absolute;
     right: -10px;
     top: 0;
   }
-  .topNav.responsive a {
+  .top-nav.responsive a.icon:hover {
+    background-color: transparent;
+  }
+  .top-nav.responsive a {
     float: none;
     display: block;
     text-align: left;
@@ -139,12 +144,22 @@ nav {
 
 /* Hero Styling */
 
-.hero {
-  width: 100%;
-  max-height: calc(100vh - 43px);
-  overflow: hidden;
+.bg-img {
+  background-image: url('http://lessthanseventy.com/hero-image.jpg');
+  height: 100vh;
+  /* Center and scale the image nicely */
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
 }
 
-.hero img {
-  width: 100%;
+/* Position the navbar container inside the image */
+.container {
+  position: absolute;
+  margin: 20px;
+  width: 95%;
 }

@@ -319,3 +319,10 @@ textarea {
     padding-top: 40px;
   }
 }
+
+/* Chrome Styling */
+@media and (-webkit-min-device-pixel-ratio:0) {
+  *-foreground, *-background {
+    font-size: 1.5em
+  }
+}

@@ -67,6 +67,7 @@ nav {
   color: white;
   top: 8px;
   z-index: 9999;
+  font-size: 36px;
 }
 
 .eye-background {
@@ -75,6 +76,7 @@ nav {
   left: 45px;
   top: 0px;
   opacity: 70%;
+  font-size: 36px;
 }
 
 .logo-text-foreground {
@@ -83,6 +85,7 @@ nav {
   left: 85px;
   top: 15px;
   z-index: 9999;
+  font-size: 26px;
 }
 
 .logo-text-background {
@@ -91,6 +94,7 @@ nav {
   left: 105px;
   top: 6px;
   opacity: 70%;
+  font-size: 26px;
 }
 
 .navbar {
@@ -213,9 +217,9 @@ nav {
   flex-direction: column;
   height: 200px;
   justify-content: end;
-  width: 150px;
+  width: 175px;
   border: 1px solid black;
-  margin: 20px;
+  margin: 10px;
 }
 
 #projects .card .card-body {
@@ -321,8 +325,6 @@ textarea {
 }
 
 /* Chrome Styling */
-@media and (-webkit-min-device-pixel-ratio:0) {
-  *-foreground, *-background {
+*-foreground:not(*:root), *-background:not(*:root) {
     font-size: 1.5em
   }
-}

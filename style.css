@@ -260,10 +260,11 @@ nav {
   border: 1px solid black;
   color: var(--secondary-color);
   text-align: center;
+  padding-top: 5px;;
 }
 
 #projects .card .card-title a {
-  margin: auto;
+  color: var(--secondary-color);
 }
 
 /* Contact Section */

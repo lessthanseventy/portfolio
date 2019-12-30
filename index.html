@@ -5,8 +5,8 @@
     <title>lessthanseventy</title>
     <meta name="description" content="A Better Future in Sight">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.lessthanseventy.com/style.css">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="https://www.lessthanseventy.com/style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/5d846c55a1.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -44,9 +44,50 @@
     </div>
 
     <div id="about">
+      <h1 class="section-heading">Things You Might Want to Know About Me</h1>
       <p>
-        
+        I am a self taught developer living in Cincinnati, Ohio. The only thing I enjoy more 
+        than making new things is learning new things. 
       </p>
+    </div>
+    <div id="projects">
+      <h1 class="section-heading">Things I Have Made That You Might Want to See</h1>
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            Lyrics Markovifier<br>
+            A song lyric generator
+            <i class="fas fa-5x fa-compact-disc"></i>
+          </div>
+          <div class="card-title">
+            <a href="https://github.com/lessthanseventy/lyricsMarkovifier">Lyrics Generator</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            My Portfolio<br>
+            This page
+            <i class="fab fa-5x fa-sith"></i>
+          </div>
+          <div class="card-title">
+            <a href="https://github.com/lessthanseventy/portfolio">The page you're viewing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact">
+      <h1 class="section-heading">Contact Me</h1>
+      <div class="container">
+        <form action="https://formspree.io/mdoapoaq" method="post">
+          <label for="form-name">Name</label><br>
+          <input type="text" id="form-name" name="name"><br>
+          <label for="form-email">E-mail</label><br>
+          <input type="email" id="form-email" name="_replyto"><br>
+          <label for="form-message">Message</label><br>
+          <textarea name="message"></textarea>
+          <input type="submit" value="Send">
+        </form>
+      </div>
     </div>
     <script src="https://www.lessthanseventy.com/main.js" async defer></script>
     <!-- <script src="main.js" async defer></script> -->

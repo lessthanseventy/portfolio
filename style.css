@@ -165,6 +165,9 @@ nav {
 
 .hero-text {
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 75px auto;
   position: relative;
   text-align: center;
@@ -173,23 +176,131 @@ nav {
 }
 
 .hero-text .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 3.5em;
-  line-height: .8em;
   color: var(--secondary-color);
+  background-color: rgba(11,19,43,0.65);
+  width: 300px;
+  height: 60px;
+  padding: 5px;;
 }
 
 .hero-text .subtitle {
-  margin: 40px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0px;
+  width: 230px;
+  height: 50px;
   font-size: 2.5em;
-  line-height: .9em;
+  background-color: rgba(11,19,43,0.65);
 }
 
 /* About Section */
 
 #about {
-  background-color: var(--main-color);
   color: var(--secondary-color);
   font-size: 1.5em;
   height: 500px;
   padding: 5% 15% 0 15%;
+}
+
+#about p {
+  margin-top: 10px;
+}
+
+.section-heading {
+  font-size: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* Projects Section */
+
+#projects {
+  color: var(--secondary-color);
+  height: 300px;
+}
+
+#projects .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-around;
+  height: 280px;
+}
+
+#projects .card {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: end;
+  width: 150px;
+  border: 1px solid black;
+  margin: 20px;
+}
+
+#projects .card .card-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 175px;
+  background-color: rgba(15,23,47,0.65);
+  width: 100%;
+  text-align: center;
+  font-size: 115%;
+}
+
+#projects .card .card-title {
+  height: 35px;
+  background-color: rgba(15,23,47,1);
+  border: 1px solid black;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+#projects .card .card-title a {
+  margin: auto;
+}
+
+/* Contact Section */
+
+#contact {
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#contact .container {
+  margin-top: 40px;
+  width: 250px;
+}
+
+input[type=text], input[type=email], textarea {
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 10px; 
+  height: 25px;
+}
+
+input[type=submit] {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+textarea {
+  height: 150px;
 }

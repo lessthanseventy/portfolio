@@ -248,7 +248,7 @@ nav {
   flex-direction: column;
   justify-content: space-around;
   height: 175px;
-  background-color: rgba(15,23,47,0.65);
+  background-color: var(--quaternary-color);
   width: 100%;
   text-align: center;
   font-size: 115%;
@@ -269,6 +269,7 @@ nav {
 /* Contact Section */
 
 #contact {
+  background-color: var(--main-color);
   color: var(--secondary-color);
   display: flex;
   flex-direction: row;
@@ -281,6 +282,8 @@ nav {
 }
 
 input[type=text], input[type=email], textarea {
+  background-color: var(--quaternary-color);
+  color: var(--secondary-color);
   width: 100%; 
   padding: 12px; 
   border: 1px solid #ccc; 
@@ -289,6 +292,7 @@ input[type=text], input[type=email], textarea {
   margin-top: 6px; 
   margin-bottom: 10px; 
   height: 25px;
+  resize: vertical;
 }
 
 input[type=submit] {

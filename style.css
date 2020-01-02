@@ -235,7 +235,7 @@ nav {
 }
 
 #projects .card .card-title {
-  height: 35px;
+  height: 45px;
   background-color: rgba(15,23,47,1);
   border: 1px solid black;
   color: var(--secondary-color);

@@ -24,6 +24,8 @@ body>.container {
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 * Navbar Styles */

@@ -22,11 +22,10 @@ body {
 }
 
 body>.container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   padding-left: 5%;
   padding-right: 5%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .section-heading {

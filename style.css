@@ -20,7 +20,13 @@ body {
   background-color: var(--main-color);
 }
 
-/* Navbar Styles */
+body>.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+* Navbar Styles */
 
 nav {
   width: 100%;
@@ -128,7 +134,7 @@ nav {
 }
 
 .chevron {
-  bottom: 0;
+  bottom: 10px;
   color: white;
   margin: auto;
   position: absolute;
@@ -136,7 +142,7 @@ nav {
   width: 100%;
 
 }
-.container {
+.bg-image .container {
   height: 90vh;
   margin: 20px 20px 0px 20px;
   position: absolute;
@@ -183,8 +189,7 @@ nav {
 #about {
   color: var(--secondary-color);
   font-size: 1.5em;
-  height: 500px;
-  padding: 5% 15% 0 15%;
+  height: auto;
 }
 
 #about p {
@@ -192,16 +197,20 @@ nav {
 }
 
 .section-heading {
+  width: 100%;
+  display: inline-block;
   font-size: 20px;
   text-align: center;
   text-decoration: underline;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 /* Projects Section */
 
 #projects {
   color: var(--secondary-color);
-  height: 300px;
+  height: auto;
 }
 
 #projects .container {
@@ -209,17 +218,16 @@ nav {
   flex-direction: row;
   justify-content: center;
   align-content: space-around;
-  height: 280px;
+  height: auto;
 }
 
-#projects .card {
+#projects .container .card {
+  flex: 1;
   display: flex;
   flex-direction: column;
   height: 200px;
-  justify-content: end;
-  width: 175px;
   border: 1px solid black;
-  margin: 10px;
+  margin: 20px;
 }
 
 #projects .card .card-body {
@@ -252,14 +260,18 @@ nav {
 #contact {
   background-color: var(--main-color);
   color: var(--secondary-color);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
 #contact .container {
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#contact form {
   width: 250px;
+  margin: 0 auto;
 }
 
 input[type=text], input[type=email], textarea {
@@ -319,10 +331,11 @@ textarea {
 }
 
 @media screen and (max-width: 600px) {
-  #contact {
-    padding-top: 40px;
-  }
+
+  #projects .container {
+    flex-direction: column;
 }
+
 
 /* Chrome Styling */
 *-foreground:not(*:root), *-background:not(*:root) {

@@ -1,8 +1,9 @@
 :root {
-  --main-color: #0B132B;
-  --secondary-color: #5BC0BE;
-  --tertiary-color: #3A506B;
-  --quaternary-color: #1C2541;
+  --background-color: #0B203F;
+  --main-color: #61A5CF;
+  --secondary-color: #7B7397;
+  --tertiary-color: #F4F7F5;
+  --quaternary-color: #1B3C4E;
 }
 
 html {
@@ -17,7 +18,7 @@ html {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: var(--main-color);
+  background-color: var(--background-color);
 }
 
 body>.container {
@@ -28,38 +29,53 @@ body>.container {
   padding-right: 5%;
 }
 
+.section-heading {
+  width: 100%;
+  display: inline-block;
+  font-size: 20px;
+  color: var(--main-color);
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 * Navbar Styles */
 
 nav {
   width: 100%;
-  background-color: var(--main-color);
+  background-color: var(--backgroud-color);
   padding-left: 30px;
   padding-right: 10px;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
  .top-nav {
-  background-color: var(--main-color);
+  background-color: var(--background-color);
   overflow: hidden;
 }
 
 .top-nav a {
-  float: left;
   display: block;
-  color: var(--secondary-color);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  display: inline-block;
+  padding: 5px 7px;
+  margin: 5px 0;
+  text-decoration: none;
+  color: var(--main-color);
 }
 
 .top-nav a:hover {
-  background-color: var(--tertiary-color);
-  color: var(--secondary-color);
-}
-
-.top-nav a.active {
-  background-color: var(--quaternary-color);
-  color: var(--tertiary-color);
+  background-color: var(--main-color);
+  color: var(--background-color);
 }
 
 .top-nav .icon {
@@ -72,7 +88,7 @@ nav {
 
 .eye-foreground {
   position: absolute;
-  color: white;
+  color: var(--main-color);
   top: 8px;
   z-index: 9999;
   font-size: 36px;
@@ -80,7 +96,7 @@ nav {
 
 .eye-background {
   position: absolute;
-  color: var(--secondary-color);
+  color: var(--main-color);
   left: 10px;
   top: 0px;
   opacity: 70%;
@@ -89,7 +105,7 @@ nav {
 
 .logo-text-foreground {
   position: absolute;
-  color: white;
+  color: var(--main-color);
   left: 50px;
   top: 15px;
   z-index: 9999;
@@ -98,29 +114,13 @@ nav {
 
 .logo-text-background {
   position: absolute;
-  color: var(--secondary-color);
+  color: var(--main-color);
   left: 60px;
   top: 6px;
   opacity: 70%;
   font-size: 26px;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.top-nav a {
-  display: inline-block;
-  padding: 10px 15px;
-  text-decoration: none;
-  color: var(--secondary-color);
-}
-
-.top-nav:hover a {
-  color: var(--secondary-color)
-}
 
 
 /* Hero Styling */
@@ -137,7 +137,7 @@ nav {
 
 .chevron {
   bottom: 10px;
-  color: white;
+  color: var(--main-color);
   margin: auto;
   position: absolute;
   text-align: center;
@@ -152,7 +152,6 @@ nav {
 }
 
 .hero-text {
-  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -168,7 +167,7 @@ nav {
   align-items: center;
   justify-content: center;
   font-size: 40px;
-  color: var(--secondary-color);
+  color: var(--main-color);
   background-color: rgba(11,19,43,0.65);
   width: 300px;
   height: 60px;
@@ -176,6 +175,7 @@ nav {
 }
 
 .hero-text .subtitle {
+  color: var(--tertiary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,7 +189,7 @@ nav {
 /* About Section */
 
 #about {
-  color: var(--secondary-color);
+  color: var(--tertiary-color);
   font-size: 1.5em;
   height: auto;
 }
@@ -198,20 +198,11 @@ nav {
   margin-top: 10px;
 }
 
-.section-heading {
-  width: 100%;
-  display: inline-block;
-  font-size: 20px;
-  text-align: center;
-  text-decoration: underline;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
 
 /* Projects Section */
 
 #projects {
-  color: var(--secondary-color);
+  color: var(--main-color);
   height: auto;
 }
 
@@ -239,9 +230,21 @@ nav {
   justify-content: space-around;
   height: 175px;
   background-color: var(--quaternary-color);
+  color: var(--tertiary-color);
   width: 100%;
   text-align: center;
   font-size: 115%;
+}
+
+#projects .card .card-body i {
+  color: var(--secondary-color)
+}
+
+#projects .card .card-body .card-body-heading {
+  font-weight: bolder;
+  text-decoration: underline;
+  font-size: 1.2em;
+  color: var(--main-color);
 }
 
 #projects .card .card-title {
@@ -254,18 +257,22 @@ nav {
 }
 
 #projects .card .card-title a {
+  color: var(--main-color);
+}
+
+#projects .card .card-title a:hover {
   color: var(--secondary-color);
+  cursor: pointer;
 }
 
 /* Contact Section */
 
 #contact {
-  background-color: var(--main-color);
-  color: var(--secondary-color);
+  background-color: var(--background-color);
+  color: var(--main-color);
 }
 
 #contact .container {
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -276,9 +283,12 @@ nav {
   margin: 0 auto;
 }
 
+#contact form label {
+  color: var(--main-color);
+}
 input[type=text], input[type=email], textarea {
-  background-color: var(--quaternary-color);
-  color: var(--secondary-color);
+  background-color: var(--background-color);
+  color: var(--tertiary-color);
   width: 100%; 
   padding: 12px; 
   border: 1px solid #ccc; 
@@ -291,8 +301,8 @@ input[type=text], input[type=email], textarea {
 }
 
 input[type=submit] {
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: var(--quaternary-color);
+  color: var(--tertiary-color);
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -319,16 +329,17 @@ textarea {
   .top-nav.responsive {position: relative;}
   .top-nav.responsive a.icon {
     position: absolute;
-    right: -10px;
+    right: -25px;
     top: 0;
   }
   .top-nav.responsive a.icon:hover {
-    background-color: transparent;
+    background-color: var(--main-color);
   }
   .top-nav.responsive a {
     float: none;
     display: block;
     text-align: left;
+    margin-right: 25px;
   }
 }
 
@@ -341,5 +352,5 @@ textarea {
 
 /* Chrome Styling */
 *-foreground:not(*:root), *-background:not(*:root) {
-    font-size: 1.5em
+    font-size: 1.5em;
   }

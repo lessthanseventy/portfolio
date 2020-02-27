@@ -1,11 +1,10 @@
 :root {
-  --background-color: #0B203F;
-  --main-color: #61A5CF;
-  --secondary-color: #7B7397;
-  --tertiary-color: #F4F7F5;
-  --quaternary-color: #1B3C4E;
+  --background-color: #111111;
+  --main-color: #c2cad0;
+  --secondary-color: #5cdb95;
+  --button-color: #393e46;
 }
-
+fea
 html {
   box-sizing: border-box;
 }
@@ -32,18 +31,15 @@ body>.container {
   width: 100%;
   display: inline-block;
   font-size: 20px;
-  color: var(--main-color);
-  text-align: center;
+  color: var(--secondary-color);
   text-decoration: underline;
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 * Navbar Styles */
 
 nav {
   width: 100%;
-  background-color: var(--backgroud-color);
+  background-color: var(--background-color);
   padding-left: 30px;
   padding-right: 10px;
 }
@@ -69,11 +65,11 @@ nav {
   padding: 5px 7px;
   margin: 5px 0;
   text-decoration: none;
-  color: var(--main-color);
+  color: var(--secondary-color);
 }
 
 .top-nav a:hover {
-  background-color: var(--main-color);
+  background-color: var(--secondary-color);
   color: var(--background-color);
 }
 
@@ -87,7 +83,7 @@ nav {
 
 .eye-foreground {
   position: absolute;
-  color: var(--main-color);
+  color: var(--secondary-color);
   top: 8px;
   z-index: 9999;
   font-size: 36px;
@@ -104,7 +100,7 @@ nav {
 
 .logo-text-foreground {
   position: absolute;
-  color: var(--main-color);
+  color: var(--secondary-color);
   left: 50px;
   top: 15px;
   z-index: 9999;
@@ -174,7 +170,7 @@ nav {
 }
 
 .hero-text .subtitle {
-  color: var(--tertiary-color);
+  color: var(--secondary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -188,9 +184,22 @@ nav {
 /* About Section */
 
 #about {
-  color: var(--tertiary-color);
+  color: var(--main-color);
   font-size: 1.5em;
   height: auto;
+}
+
+#about .section-heading {
+  text-align: left;
+}
+
+#about .container {
+  padding: 10px;
+  margin-top: 25px;
+}
+
+#about .container h1 {
+  padding: 2px 15px;
 }
 
 #about p {
@@ -203,6 +212,12 @@ nav {
 #projects {
   color: var(--main-color);
   height: auto;
+}
+
+#projects .section-heading {
+  text-align: center;
+  padding-right: 15px;
+  padding-top: 25px;
 }
 
 #projects .container {
@@ -228,11 +243,11 @@ nav {
   flex-direction: column;
   justify-content: space-around;
   height: 175px;
-  background-color: var(--quaternary-color);
-  color: var(--tertiary-color);
+  color: var(--main-color);
   width: 100%;
   text-align: center;
   font-size: 115%;
+  border: 1px solid white;
 }
 
 #projects .card .card-body i {
@@ -243,16 +258,18 @@ nav {
   font-weight: bolder;
   text-decoration: underline;
   font-size: 1.2em;
-  color: var(--main-color);
+  color: var(--secondary-color);
 }
 
 #projects .card .card-title {
   height: 45px;
-  background-color: rgba(15,23,47,1);
   border: 1px solid black;
   color: var(--secondary-color);
   text-align: center;
   padding-top: 5px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 #projects .card .card-title a {
@@ -265,30 +282,61 @@ nav {
   cursor: pointer;
 }
 
-/* Contact Section */
+/* footer Section */
 
-#contact {
-  background-color: var(--background-color);
+#footer {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+#footer .section-heading {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#footer button {
   color: var(--main-color);
+  background-color: var(--background-color);
+  border: none;
+  text-decoration: underline;
+  font-size: 20px;
+  width: 40px;
 }
 
-#contact .container {
+#footer button:hover {
+  cursor: pointer;
+}
+
+#footer .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-#contact form {
+#footer .container a {
+  width: 40px;
+}
+
+#footer .container a i {
+  color: var(--main-color);
+  font-size: 40px;
+}
+
+#footer form {
   width: 250px;
   margin: 0 auto;
 }
 
-#contact form label {
+#footer form label {
   color: var(--main-color);
 }
+
 input[type=text], input[type=email], textarea {
   background-color: var(--background-color);
-  color: var(--tertiary-color);
+  color: var(--main-color);
   width: 100%; 
   padding: 12px; 
   border: 1px solid #ccc; 
@@ -301,17 +349,83 @@ input[type=text], input[type=email], textarea {
 }
 
 input[type=submit] {
-  background-color: var(--quaternary-color);
-  color: var(--tertiary-color);
+  background-color: var(--button-color);
+  color: var(--main-color);
   padding: 12px 20px;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
+  border: 1px solid black;
 }
 
 textarea {
   height: 150px;
+}
+
+/* Modal Styles */
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999999; /* Sit on top */
+  left: 0;
+  top: 0;
+  padding-top: 30px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--background-color);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.close {
+  position: absolute;
+  color: var(--main-color);
+  font-size: 28px;
+  font-weight: bold;
+  top: 1px;
+  right: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--secondary-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  padding: 15px 25px;
+  color: var(--main-color);
+}
+
+.modal-body {
+  padding: 2px 16px;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
 }
 
 /* Responsive Styles */

@@ -44,18 +44,34 @@
     </div>
     <div class="container">
       <div id="about">
-        <h1 class="section-heading">Things You Might Want to Know About Me</h1>
-        <p>
-          I am a self taught developer living in Cincinnati, Ohio. The only thing I enjoy more 
-          than making new things is learning new things. 
-        </p>
+        <div class="container">
+          <h1 class="section-heading">Who I Am</h1>
+          <p>
+            I am a self taught developer living in Cincinnati, Ohio. The only thing I enjoy more 
+            than making new things is learning new things. 
+          </p>
+          <p>
+            I am a self taught developer living in Cincinnati, Ohio. The only thing I enjoy more 
+            than making new things is learning new things. 
+          </p>
+          <p>
+            I am a self taught developer living in Cincinnati, Ohio. The only thing I enjoy more 
+            than making new things is learning new things. 
+          </p>
+          <p>
+            I am a self taught developer living in Cincinnati, Ohio. The only thing I enjoy more 
+            than making new things is learning new things. 
+          </p>
+        </div>
       </div>
       <div id="projects">
-        <h1 class="section-heading">Things I Have Made That You Might Want to See</h1>
+        <h1 class="section-heading">Things I've Done</h1>
         <div class="container">
           <div class="card">
             <div class="card-body">
-              <div class="card-body-heading">Lyrics Markovifier</div>
+              <a href="https://xenodochial-booth-607c7d.netlify.com/">
+                <div class="card-body-heading">Lyrics Markovifier</div>
+              </a>
               Song Generator
               <i class="fas fa-5x fa-compact-disc"></i>
             </div>
@@ -67,7 +83,9 @@
           </div>
           <div class="card">
             <div class="card-body">
-              <div class="card-body-heading">My Portfolio</div>
+              <a href="https://www.lessthanseventy.com">
+                <div class="card-body-heading">My Portfolio</div>
+              </a>
               This page
               <i class="fab fa-5x fa-sith"></i>
             </div>
@@ -77,7 +95,9 @@
           </div>
           <div class="card">
             <div class="card-body">
-              <div class="card-body-heading">Star Wars Crawl</div>
+              <a href="https://zen-khorana-e5bdb2.netlify.com/">
+                <div class="card-body-heading">Star Wars Crawl</div>
+              </a>
               Generate your own Star Wars opening
               <i class="fas fa-5x fa-jedi"></i>
             </div>
@@ -89,22 +109,35 @@
           </div>
         </div>
       </div>
-      <div id="contact">
+      <div id="footer">
         <h1 class="section-heading">Contact Me</h1>
         <div class="container">
-          <form action="https://formspree.io/mdoapoaq" method="post">
-            <label for="form-name">Name</label><br>
-            <input type="text" id="form-name" name="name" placeholder="Zaphod Beeblebrox"><br>
-            <label for="form-email">E-mail</label><br>
-            <input type="email" id="form-email" name="_replyto" placeholder="one_hoopy_frood@towel.net"><br>
-            <label for="form-message">Message</label><br>
-            <textarea name="message" placeholder="DON'T PANIC!"></textarea>
-            <input type="submit" value="Send">
-          </form>
+          <button id="modalBtn"><i class="fas fa-2x fa-envelope"></i></button>
+          <a href="https://github.com/lessthanseventy"><i class="fab fa-3x fa-github-square"></i></a>
+          <a href="https://linkedin.com"><i class="fab fa-3x fa-linkedin"></i></a>
+          <a href="http://www.lessthanseventy.com/resume.pdf"><i class="far fa-file-alt"></i></a>
+          <div id="modal" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="section-heading">Send Me a Message</div><span class="close">&times;</span>
+              </div>
+              <div class="modal-body">
+                <form action="https://formspree.io/mdoapoaq" method="post">
+                  <label for="form-name">Name</label><br>
+                  <input type="text" id="form-name" name="name" placeholder="Zaphod Beeblebrox"><br>
+                  <label for="form-email">E-mail</label><br>
+                  <input type="email" id="form-email" name="_replyto" placeholder="one_hoopy_frood@towel.net"><br>
+                  <label for="form-message">Message</label><br>
+                  <textarea name="message" placeholder="DON'T PANIC!"></textarea>
+                  <input type="submit" value="Send">
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>    
-    <script src="https://www.lessthanseventy.com/main.js" async defer></script>
-    <!-- <script src="main.js" async defer></script> -->
+    <!-- <!-- <script src="https://www.lessthanseventy.com/main.js" async defer></script> --> -->
+    <script src="main.js" async defer></script>
   </body>
 </html>

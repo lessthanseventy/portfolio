@@ -232,6 +232,7 @@ nav {
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 200px;
   border: 1px solid black;
   margin: 20px;
 }
@@ -269,7 +270,6 @@ nav {
   border-left: 1px solid white;
   border-right: 1px solid white;
   border-bottom: 1px solid white;
-  width: 100%;
 }
 
 #projects .card .card-title a {

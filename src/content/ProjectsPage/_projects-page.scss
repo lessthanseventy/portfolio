@@ -1,0 +1,15 @@
+.projects-page .bx--row {
+  padding-top: $spacing-05;
+  padding-bottom: $spacing-05;
+}
+.bx--data-table tr.bx--parent-row td:nth-child(3),
+.bx--data-table tr.bx--parent-row td:nth-child(4) {
+  padding-left: $spacing-01;
+  padding-right: $spacing-01;
+}
+.bx--data-table tr.bx--parent-row td:nth-child(5) {
+  text-align: center;
+}
+.bx--data-table th:nth-child(5) span {
+  text-align: center;
+}

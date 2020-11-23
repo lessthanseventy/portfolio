@@ -16,7 +16,26 @@ import {
 const ProjectsTable = ({ rows, headers }) => {
   const getRowDescription = rowId => {
     const row = rows.find(({ id }) => id === rowId);
-    return row ? row.description : '';
+    return (
+      <>
+        <p>Owner: {row ? row.nameWithOwner.split('/')[0] : ''}</p>
+        <p>
+          Desc: {row ? (row.description ? row.description : 'None Listed') : ''}
+        </p>
+        <p className="description-mobile">
+          Stars: {row.stars ? row.stars : '0'}
+        </p>
+        <p className="description-mobile">
+          Issues: {row.issueCount ? row.issueCount : '0'}
+        </p>
+        <p className="description-mobile">
+          Created: {row.createdAt ? row.createdAt : '0'}
+        </p>
+        <p className="links-mobile">
+          Link(s): <span>{row.links ? row.links : ''}</span>
+        </p>
+      </>
+    );
   };
   return (
     <DataTable
@@ -29,9 +48,7 @@ const ProjectsTable = ({ rows, headers }) => {
         getRowProps,
         getTableProps,
       }) => (
-        <TableContainer
-          title="Latest Developments in Government"
-          description="A collection of public U.S. Government repositories.">
+        <TableContainer>
           <Table {...getTableProps()}>
             <TableHead>
               <TableRow>

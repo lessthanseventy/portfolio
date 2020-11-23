@@ -49,7 +49,7 @@ const REPO_QUERY = gql`
       ... on Organization {
         name
         repositories(
-          first: 15
+          first: 10
           orderBy: { field: UPDATED_AT, direction: DESC }
         ) {
           totalCount
@@ -69,6 +69,7 @@ const REPO_QUERY = gql`
               }
             }
             name
+            nameWithOwner
             updatedAt
             createdAt
             description
@@ -80,7 +81,7 @@ const REPO_QUERY = gql`
   }
 `;
 
-const headers = [
+const desktopHeaders = [
   {
     key: 'name',
     header: 'Name',
@@ -106,8 +107,23 @@ const headers = [
     header: 'Links',
   },
 ];
+
+const mobileHeaders = [
+  {
+    key: 'name',
+    header: 'Name',
+  },
+  {
+    key: 'updatedAt',
+    header: 'Updated',
+  },
+];
+
+let vwidth = window.innerWidth;
+const headers = vwidth < 1056 ? mobileHeaders : desktopHeaders;
+
 const LinkList = ({ url, homepageUrl }) => (
-  <ul style={{ display: 'flex' }}>
+  <ul style={{ display: 'inline-flex' }}>
     <li>
       <Link href={url}>GitHub</Link>
     </li>
@@ -120,14 +136,20 @@ const LinkList = ({ url, homepageUrl }) => (
   </ul>
 );
 
+const dateOptions = {
+  year: '2-digit',
+  month: 'numeric',
+  day: 'numeric',
+};
+
 const getRowItems = rows =>
   rows.map(row => ({
     ...row,
     key: row.id,
     stars: row.stargazers.totalCount,
     issueCount: row.issues.totalCount,
-    createdAt: new Date(row.createdAt).toLocaleDateString('af-ZA'),
-    updatedAt: new Date(row.updatedAt).toLocaleDateString('af-ZA'),
+    createdAt: new Date(row.createdAt).toLocaleDateString('en-US', dateOptions),
+    updatedAt: new Date(row.updatedAt).toLocaleDateString('en-US', dateOptions),
     links: <LinkList url={row.url} homepageUrl={row.homepageUrl} />,
   }));
 
@@ -136,52 +158,65 @@ const ProjectsPage = () => {
   const [firstRowIndex, setFirstRowIndex] = useState(0);
   const [currentPageSize, setCurrentPageSize] = useState(10);
   return (
-    <Query query={REPO_QUERY}>
-      {({ loading, error, data }) => {
-        // Wait for the request to complete
-        if (loading)
+    <div className="bx--grid">
+      <div className="bx--row">
+        <div className="bx--col">
+          <h1 className="table-header">Latest Developments in Government</h1>
+          <h2 className="table-subheader">
+            A collection of U.S. gov't repos on Github.
+          </h2>
+        </div>
+      </div>
+      <Query query={REPO_QUERY}>
+        {({ loading, error, data }) => {
+          // Wait for the request to complete
+          if (loading)
+            return (
+              <DataTableSkeleton
+                columnCount={headers.length + 1}
+                rowCount={10}
+                headers={headers}
+              />
+            );
+          // Something went wrong with the data fetching
+          if (error) return `Error! ${error.message}`;
+          // If we're here, we've got our data!
+          let repositories = [];
+          for (let i = 0; i < data.nodes.length; i++) {
+            repositories.push(...data.nodes[i].repositories.nodes);
+          }
+          let sortedRepos = repositories;
+          sortedRepos.sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1));
+          setTotalItems(sortedRepos.length);
+          const rows = getRowItems(sortedRepos);
           return (
-            <DataTableSkeleton
-              columnCount={headers.length + 1}
-              rowCount={10}
-              headers={headers}
-            />
+            <>
+              <ProjectsTable
+                headers={headers}
+                rows={rows.slice(
+                  firstRowIndex,
+                  firstRowIndex + currentPageSize
+                )}
+              />
+              <Pagination
+                totalItems={totalItems}
+                backwardText="Prev page"
+                forwardText="Next page"
+                pageSize={currentPageSize}
+                pageSizes={[5, 10, 15, 25]}
+                itemsPerPageText="Items per page"
+                onChange={({ page, pageSize }) => {
+                  if (pageSize !== currentPageSize) {
+                    setCurrentPageSize(pageSize);
+                  }
+                  setFirstRowIndex(pageSize * (page - 1));
+                }}
+              />
+            </>
           );
-        // Something went wrong with the data fetching
-        if (error) return `Error! ${error.message}`;
-        // If we're here, we've got our data!
-        let repositories = [];
-        for (let i = 0; i < data.nodes.length; i++) {
-          repositories.push(...data.nodes[i].repositories.nodes);
-        }
-        let sortedRepos = repositories;
-        sortedRepos.sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1));
-        setTotalItems(sortedRepos.length);
-        const rows = getRowItems(sortedRepos);
-        return (
-          <>
-            <ProjectsTable
-              headers={headers}
-              rows={rows.slice(firstRowIndex, firstRowIndex + currentPageSize)}
-            />
-            <Pagination
-              totalItems={totalItems}
-              backwardText="Previous page"
-              forwardText="Next page"
-              pageSize={currentPageSize}
-              pageSizes={[5, 10, 15, 25]}
-              itemsPerPageText="Items per page"
-              onChange={({ page, pageSize }) => {
-                if (pageSize !== currentPageSize) {
-                  setCurrentPageSize(pageSize);
-                }
-                setFirstRowIndex(pageSize * (page - 1));
-              }}
-            />
-          </>
-        );
-      }}
-    </Query>
+        }}
+      </Query>
+    </div>
   );
 };
 export default ProjectsPage;

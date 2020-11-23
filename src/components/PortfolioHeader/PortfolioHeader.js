@@ -9,7 +9,6 @@ import {
   SkipToContent,
 } from 'carbon-components-react';
 import { Icon } from '@iconify/react';
-import homeIcon from '@iconify/icons-carbon/home';
 import bookIcon from '@iconify/icons-carbon/book';
 
 const PortfolioHeader = () => (
